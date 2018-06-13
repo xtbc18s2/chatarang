@@ -1,5 +1,20 @@
 # Chatarang
 
+## Day 7 Homework
+
+Add support for multiple rooms/channels! _Hint_: The first argument (`endpoint`) to `base.syncState` should be different for each room/channel.
+
+Don't forget to make the sidebar links work!
+
+### Super Mega Bonus Credit
+
+Add direct messages too!
+
+### Super Mega Bonus Credit Hyper Fighting
+
+Use Firebase authentication when signing in users. _Hint_: Google authentication is the easiest method.
+
+
 ## Day 6 Homework
 
 Create and style more components, based on the `chat-static` content. There should be approximately one CSS file per component.
