@@ -6,7 +6,7 @@ const Avatar = ({ user, style }) => {
       className="Avatar"
       style={{
         ...styles,
-        style,
+        ...style,
         background: `url(https://api.adorable.io/avatars/40/${user.email})`,
       }}
     ></div>
