@@ -1,5 +1,17 @@
 # Chatarang
 
+## Day 8 Homework
+
+Add another authentication method (or two?). Remember, [documentation](https://firebase.google.com/docs/auth/web/manage-users#get_the_currently_signed_in_user) is your friend.
+
+### Super Mega Bonus Credit
+
+Continue to enhance the app. Be creative!
+
+### Super Mega Bonus Credit Hyper Fighting
+
+Have a great weekend!
+
 ## Day 7 Homework
 
 Add support for multiple rooms/channels! _Hint_: The first argument (`endpoint`) to `base.syncState` should be different for each room/channel.
