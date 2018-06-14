@@ -26,7 +26,6 @@ class SignIn extends Component {
       .signInWithPopup(googleProvider)
       .then(
         response => {
-          console.log(response.user)
           this.props.handleAuth(response.user)
         }
       )
