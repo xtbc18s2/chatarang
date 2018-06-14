@@ -38,6 +38,7 @@ class RoomList extends Component {
               <RoomLink
                 key={roomName}
                 room={this.state.rooms[roomName]}
+                loadRoom={this.props.loadRoom}
               />
             ))
           }
