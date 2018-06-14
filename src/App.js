@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import './App.css'
+import { auth } from './base'
 import SignIn from './SignIn'
 import Main from './Main'
 
@@ -27,8 +28,12 @@ class App extends Component {
   }
 
   signOut = () => {
-    this.setState({ user: {} })
-    localStorage.removeItem('user')
+    auth
+      .signOut()
+      .then(() => {
+        this.setState({ user: {} })
+        localStorage.removeItem('user')
+      })
   }
 
   render() {
