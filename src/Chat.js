@@ -15,7 +15,7 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    base.syncState('random/messages', {
+    base.syncState(`${this.props.room.name}/messages`, {
       context: this,
       state: 'messages',
       asArray: true,
