@@ -12,7 +12,7 @@ class RoomForm extends Component {
   handleSubmit = (ev) => {
     ev.preventDefault()
     this.props.addRoom(this.state.room)
-    this.props.history.goBack()
+    this.props.history.push(`/rooms/${this.state.room.name}`)
   }
 
   handleChange = (ev) => {
