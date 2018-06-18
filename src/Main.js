@@ -4,10 +4,25 @@ import Sidebar from './Sidebar'
 import Chat from './Chat'
 
 class Main extends Component {
-  state = {
-    room: {
-      name: 's2morning',
-      description: 'Chatter about the actual class',
+  constructor() {
+    super()
+
+    this.state = {
+      room: {}
+    }
+  }
+
+  componentDidMount() {
+    this.loadRoom({
+      name: this.props.match.params.roomName,
+    })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
+      this.loadRoom({
+        name: this.props.match.params.roomName,
+      })
     }
   }
 
