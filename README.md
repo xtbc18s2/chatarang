@@ -1,5 +1,9 @@
 # Chatarang
 
+## Day 9 Homework
+
+Move the list of rooms in state to `Main`, and be sure that the description updates appropriately when changing rooms.
+
 ## Day 8 Homework
 
 Add another authentication method (or two?). Remember, [documentation](https://firebase.google.com/docs/auth/web/manage-users#get_the_currently_signed_in_user) is your friend.
