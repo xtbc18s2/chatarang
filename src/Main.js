@@ -1,28 +1,38 @@
 import React, { Component } from 'react'
 
+import base from './base'
 import Sidebar from './Sidebar'
 import Chat from './Chat'
 
 class Main extends Component {
   state = {
     room: {},
+    rooms: {},
   }
 
   componentDidMount() {
-    this.loadRoom({
-      name: this.props.match.params.roomName,
-    })
+    const { roomName } = this.props.match.params
+
+    base.syncState(
+      'rooms',
+      {
+        context: this,
+        state: 'rooms',
+        then: () => this.loadRoom(roomName),
+      }
+    )
+
+
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
-      this.loadRoom({
-        name: this.props.match.params.roomName,
-      })
+      this.loadRoom(this.props.match.params.roomName)
     }
   }
 
-  loadRoom = (room) => {
+  loadRoom = (roomName) => {
+    const room = this.state.rooms[roomName]
     this.setState({ room })
   }
 
