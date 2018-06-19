@@ -1,5 +1,20 @@
 # Chatarang
 
+## Day 10 Homework
+
+Only list public rooms, and rooms in which the current user is listed as a member.
+
+### Super Mega Bonus Credit
+
+Don't allow users to load non-public rooms of which they're not members.
+
+### Super Mega Bonus Credit Hyper Fighting
+
+Make a separate UI for direct messages.
+
+* List them separately in the sidebar.
+* Make a new form (or at least a new button that presents the same form differently).
+
 ## Day 9 Homework
 
 Move the list of rooms in state to `Main`, and be sure that the description updates appropriately when changing rooms.
