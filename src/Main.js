@@ -57,7 +57,10 @@ class Main extends Component {
   }
 
   loadValidRoom = () => {
-    const realRoomName = Object.keys(this.state.rooms)[0]
+    const realRoomName = Object.keys(this.state.rooms).find(
+      roomName => this.state.rooms[roomName]
+    )
+
     this.props.history.push(`/rooms/${realRoomName}`)
   }
 
