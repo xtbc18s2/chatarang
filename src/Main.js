@@ -82,11 +82,19 @@ class Main extends Component {
     const rooms = {...this.state.rooms}
     const { user } = this.props
 
+    room.displayName = room.name
+
     if (!room.public) {
       room.members.push({
         label: `${user.displayName} (${user.email})`,
         value: user.uid,
       })
+    }
+
+    if (room.dm) {
+      const memberNames = room.members.map(member => member.label.split(' ')[0])
+      room.displayName = memberNames.join(', ')
+      room.name = room.members.map(member => member.value).join('-')
     }
 
     rooms[room.name] = room

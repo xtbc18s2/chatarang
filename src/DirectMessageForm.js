@@ -3,14 +3,14 @@ import { StyleSheet, css } from 'aphrodite'
 import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 
-class RoomForm extends Component {
+class DirectMessageForm extends Component {
   state = {
     room: {
         name: '',
-        description: '',
-        public: true,
+        description: 'Direct message',
+        public: false,
         members: [],
-        dm: false,
+        dm: true,
     },
   }
 
@@ -56,69 +56,31 @@ class RoomForm extends Component {
     return (
       <div className={`RoomForm ${css(styles.roomForm)}`}>
         <main className={css(styles.main)}>
-          <h2 className={css(styles.title)}>Create a room</h2>
+          <h2 className={css(styles.title)}>
+            Direct Message
+          </h2>
           <form
             className={css(styles.form)}
             onSubmit={this.handleSubmit}
           >
-            <p>
-              <label className={css(styles.label)}>
-                <input
-                  type="checkbox"
-                  name="public"
-                  checked={this.state.room.public}
-                  onChange={this.handleChange}
-                />
-                Public
+            <div>
+              <label
+                htmlFor="users"
+                className={css(styles.label)}
+              >
+                Start a conversation
               </label>
-            </p>
-            <p>
-              <label htmlFor="name" className={css(styles.label)}>
-                Room Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={this.state.room.name}
-                className={css(styles.input, styles.textInput)}
-                onChange={this.handleChange}
-                autoFocus
+              <Select
+                name="members"
+                multi
+                value={this.state.room.members}
+                options={this.users()}
+                onChange={this.handleSelectChange}
+                className={css(styles.input)}
+                placeholder="Invite other people..."
               />
-            </p>
-            <p>
-              <label htmlFor="description" className={css(styles.label)}>
-                Description
-              </label>
-              <input
-                type="text"
-                name="description"
-                value={this.state.room.description}
-                className={css(styles.input, styles.textInput)}
-                onChange={this.handleChange}
-              />
-            </p>
+            </div>
 
-            {
-              !this.state.room.public && (
-                <div>
-                  <label
-                    htmlFor="users"
-                    className={css(styles.label)}
-                  >
-                    Users to add
-                  </label>
-                  <Select
-                    name="members"
-                    multi
-                    value={this.state.room.members}
-                    options={this.users()}
-                    onChange={this.handleSelectChange}
-                    className={css(styles.input)}
-                    placeholder="Invite other people..."
-                  />
-                </div>
-              )
-            }
             <div className={css(styles.buttonContainer)}>
               <button
                 type="button"
@@ -131,7 +93,7 @@ class RoomForm extends Component {
                 type="submit"
                 className={css(styles.button)}
               >
-                Create Room
+                Go
               </button>
             </div>
           </form>
@@ -173,9 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
     marginBottom: '2rem',
-    paddingBottom: '2rem',
-    paddingLeft: '2rem',
-    paddingRight: '2rem',
+    padding: '2rem',
   },
 
   label: {
@@ -229,4 +189,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default RoomForm
+export default DirectMessageForm
