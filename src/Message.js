@@ -35,7 +35,10 @@ class Message extends Component {
         </div>
         {
           this.state.showPicker &&
-            <Picker showPreview={false} />
+            <Picker
+              showPreview={false}
+              style={pickerStyles}
+            />
         }
       </div>
     )
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
     marginTop: '1rem',
     padding: '1rem 1rem',
     position: 'relative',
+    zIndex: 1,
 
     ':hover': {
       backgroundColor: '#f6f6f6',
@@ -76,5 +80,11 @@ const styles = StyleSheet.create({
     },
   },
 })
+
+const pickerStyles = {
+  position: 'absolute',
+  top: '-20rem',
+  right: '2rem',
+}
 
 export default Message

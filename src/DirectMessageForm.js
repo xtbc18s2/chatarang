@@ -106,6 +106,7 @@ class DirectMessageForm extends Component {
 const styles = StyleSheet.create({
   roomForm: {
     position: 'absolute',
+    zIndex: 1000,
     top: 0,
     left: 0,
     height: '100vh',
