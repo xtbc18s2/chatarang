@@ -65,7 +65,7 @@ class Main extends Component {
   }
 
   loadValidRoom = () => {
-    const realRoomName = Object.keys(this.state.rooms).find(
+    const realRoomName = this.filteredRoomNames().find(
       roomName => this.state.rooms[roomName]
     )
 
