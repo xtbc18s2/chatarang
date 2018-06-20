@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     marginTop: '1rem',
     padding: '1rem',
     position: 'relative',
+    zIndex: 1,
 
     ':hover': {
       backgroundColor: '#f6f6f6',
