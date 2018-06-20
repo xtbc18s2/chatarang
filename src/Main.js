@@ -81,6 +81,12 @@ class Main extends Component {
       })
     }
 
+    if (room.dm) {
+      const memberNames = room.members.map(member => member.label.split(' ')[0])
+      room.displayName = memberNames.join(', ')
+      room.name = room.members.map(member => member.value).join('-')
+    }
+
     const rooms = {...this.state.rooms}
     rooms[room.name] = room
     this.setState({ rooms })
