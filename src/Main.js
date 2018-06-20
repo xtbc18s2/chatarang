@@ -56,6 +56,12 @@ class Main extends Component {
     )
   }
 
+  addRoom = (room) => {
+    const rooms = {...this.state.rooms}
+    rooms[room.name] = room
+    this.setState({ rooms })
+  }
+
   loadValidRoom = () => {
     const realRoomName = Object.keys(this.state.rooms).find(
       roomName => this.state.rooms[roomName]
@@ -71,6 +77,8 @@ class Main extends Component {
           user={this.props.user}
           signOut={this.props.signOut}
           users={this.props.users}
+          rooms={this.state.rooms}
+          addRoom={this.addRoom}
         />
         <Chat
           user={this.props.user}

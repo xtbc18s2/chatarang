@@ -4,30 +4,11 @@ import { Route, Switch, Link } from 'react-router-dom'
 
 import RoomLink from './RoomLink'
 import RoomForm from './RoomForm'
-import base from './base'
 
 class RoomList extends Component {
-  state = {
-    rooms: {},
-  }
-
-  componentDidMount() {
-    base.syncState(
-      'rooms',
-      {
-        context: this,
-        state: 'rooms',
-      }
-    )
-  }
-
-  addRoom = (room) => {
-    const rooms = {...this.state.rooms}
-    rooms[room.name] = room
-    this.setState({ rooms })
-  }
-
   render() {
+    const { rooms } = this.props
+
     return (
       <Switch>
         <Route
@@ -35,7 +16,7 @@ class RoomList extends Component {
           render={
             navProps => (
               <RoomForm
-                addRoom={this.addRoom}
+                addRoom={this.props.addRoom}
                 users={this.props.users}
                 {...navProps}
               />
@@ -49,7 +30,9 @@ class RoomList extends Component {
                 className={`RoomList ${css(styles.nav)}`}
               >
                 <div className={css(styles.heading)}>
-                  <h2 className={css(styles.h2)}>Rooms</h2>
+                  <h2 className={css(styles.h2)}>
+                    Rooms
+                  </h2>
                   <Link
                     className={css(styles.button)}
                     to="/rooms/new"
@@ -59,10 +42,10 @@ class RoomList extends Component {
                 </div>
                 <ul className={css(styles.list)}>
                   {
-                    Object.keys(this.state.rooms).map(roomName => (
+                    Object.keys(rooms).map(roomName => (
                       <RoomLink
                         key={roomName}
-                        room={this.state.rooms[roomName]}
+                        room={rooms[roomName]}
                       />
                     ))
                   }
