@@ -1,5 +1,13 @@
 # Chatarang
 
+## Day 11 Homework
+
+See how far you can get implementing emoji reactions.
+
+### Super Mega Bonus Credit
+
+Reflect on how much you've learned these last three weeks!
+
 ## Day 10 Homework
 
 Only list public rooms, and rooms in which the current user is listed as a member.
