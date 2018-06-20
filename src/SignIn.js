@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import { auth, googleProvider } from './base'
+import { auth, googleProvider, githubProvider } from './base'
 
 class SignIn extends Component {
   state = {
@@ -12,13 +12,8 @@ class SignIn extends Component {
     this.setState({ email: ev.target.value })
   }
 
-  handleSubmit = (ev) => {
-    ev.preventDefault()
-    // do something?
-  }
-
-  authenticate = () => {
-    auth.signInWithPopup(googleProvider)
+  authenticate = (provider) => {
+    auth.signInWithPopup(provider)
   }
 
   render() {
@@ -33,32 +28,25 @@ class SignIn extends Component {
         <main className={css(styles.main)}>
           <form
             className={css(styles.form)}
-            onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
-            {/* <label htmlFor="email" className={css(styles.label)}>
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              className={css(styles.input)}
-              onChange={this.handleChange}
-              autoFocus
-            />
-            <button type="submit" className={css(styles.button)}>
-              Sign In
-            </button>
-
-            <div>or</div> */}
 
             <button
               type="button"
               className={css(styles.button)}
-              onClick={this.authenticate}
+              onClick={() => this.authenticate(googleProvider)}
             >
               <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
               Sign in with Google
+            </button>
+
+            <button
+              type="button"
+              className={css(styles.button, styles.github)}
+              onClick={() => this.authenticate(githubProvider)}
+            >
+              <i className={`fab fa-github ${css(styles.brandIcon)}`}></i>
+              Sign in with GitHub
             </button>
           </form>
 
@@ -143,7 +131,7 @@ const styles = StyleSheet.create({
 
   button: {
     display: 'block',
-    margin: '0 auto',
+    margin: '0 auto 1rem',
     padding: '1rem 2rem',
     fontSize: '1.2rem',
     borderRadius: '1rem',
@@ -151,6 +139,11 @@ const styles = StyleSheet.create({
     color: 'white',
     width: '20rem',
     cursor: 'pointer',
+  },
+
+  github: {
+    backgroundColor: '#6e5494',
+    marginBottom: 0,
   },
 
   brandIcon: {
