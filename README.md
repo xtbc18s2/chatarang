@@ -1,5 +1,17 @@
 # Chatarang
 
+## Potential future enhancements
+
+* Client-side form validation (_e.g._ required fields)
+* Prevent the creation of a room that already exists
+* Delete the messages when a room is deleted
+* Include emojis in message body
+* Upload images
+* Multiple organizations
+* Show a room's members
+* Show who is logged in
+* Indicate when someone is typing
+
 ## Day 11 Homework
 
 See how far you can get implementing emoji reactions.
