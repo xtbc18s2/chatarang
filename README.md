@@ -1,5 +1,22 @@
 # Chatarang
 
+## Potential future enhancements
+
+* Disallow duplicate rooms
+* Client-side validation (_e.g._ required fields)
+* Delete messages when deleting a room
+* Allow emoji picker in message body
+* Upload images
+* Multiple organizations
+* List each room's members
+* Show who is currently signed in
+* Indicate when someone is typing
+* Send room invitations to users
+* Add more members to a room after it's created
+* Make it mobile friendly
+* Filter out naughty cuss-type language
+* Ban users
+
 ## Day 11 Homework
 
 See how far you can get implementing emoji reactions.
