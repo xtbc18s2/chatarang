@@ -11,6 +11,7 @@
 * Show a room's members
 * Show who is logged in
 * Indicate when someone is typing
+* Make it mobile-friendly!
 
 ## Day 11 Homework
 
